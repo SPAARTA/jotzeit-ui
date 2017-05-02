@@ -1,7 +1,6 @@
 /**
- * Sample React Native App
+ * JotZeit ui (note time)
  * https://github.com/facebook/react-native
- * @flow
  */
 
 import React, { Component } from 'react';
