@@ -8,6 +8,7 @@ import {
   View,
   TextInput
 } from 'react-native'
+import Jotter from '../containers/Jotter'
 
 const styles = StyleSheet.create({
   container: {
@@ -25,50 +26,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  statusBar: {
+    height: 20,
+    backgroundColor: 'white'
   }
 })
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: 'Jot it down' };
-    this.buttonPressed = this.buttonPressed.bind(this);
-  }
 
-  buttonPressed() {
-    Alert.alert('title', this.state.text);
-    this.setState({text: ''});
+  constructor(props) {
+    super(props)
   }
 
   render() {
     return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center'
-      }}>
-        <View style={{ flex: 0.5, backgroundColor: '#115060' }}></View>
-        <TextInput
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-          multiline={true}
-          style={{
-            flex: 6,
-            backgroundColor: '#115060',
-            color: '#FFFFFF',
-            padding: 20,
-            fontSize: 50,
-            fontFamily: 'AppleSDGothicNeo-Light'
-          }}
-        />
-        <Button
-          onPress={this.buttonPressed}
-          title="Save Note"
-          color="#115060"
-          accessibilityLabel="This button saves the note"
-          returnKeyType="send"
-          style={{ flex: 1 }}
-        />
+      <View>
+        <View style={styles.statusBar} />
+        <Jotter />
       </View>
     )
   }

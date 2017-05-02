@@ -13,10 +13,6 @@ import reducer from './reducers'
 const store = createStore(reducer);
 
 export default class Jotzeit extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: 'Jot it down' };
-  }
 
   render() {
     return (
@@ -25,6 +21,7 @@ export default class Jotzeit extends Component {
       </Provider>
     );
   }
+
 }
 
 AppRegistry.registerComponent('Jotzeit', () => Jotzeit);
