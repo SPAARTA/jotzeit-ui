@@ -51,4 +51,16 @@ class Jotter extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ActionCreators, dispatch);
+}
+
+//function mapStateToProps(state) {
+//  return {
+//    navigationState: state.navigationState
+//  };
+//}
+//do without connecting to store
+//export default connect(null, actionCreators)(TodoApp)
+
 export default reduxForm({ form: 'test' })(Jotter)
