@@ -9,6 +9,7 @@ import {
   TextInput
 } from 'react-native'
 import Jotter from '../containers/Jotter'
+import JotList from './JotList'
 
 const styles = StyleSheet.create({
   container: {
@@ -44,10 +45,10 @@ export default class App extends Component {
       <View>
         <View style={styles.statusBar} />
         <Jotter />
+        <JotList />
       </View>
     )
   }
 }
 
-AppRegistry.registerComponent('App', () => App);
-
+AppRegistry.registerComponent('App', () => App)
